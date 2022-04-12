@@ -20,28 +20,59 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="XieTaotao的博客">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="VMware虚拟机安装Ubuntu20.041、准备工作1.1、一台性能较好的主机我安装在自己的笔记本上配置如下：  CPU: i7-9750H 内存: 16G 硬盘: 512G固态硬盘  1.2、VMware虚拟化软件VMwarre官网下载：https:&#x2F;&#x2F;customerconnect.vmware.com&#x2F;cn&#x2F;downloads&#x2F;#all_products选择这个VMware Workst">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VMware虚拟机安装Ubuntu20.04">
+<meta property="og:url" content="http://example.com/2022/04/12/%E5%AE%89%E8%A3%85Ubuntu20-04/index.html">
 <meta property="og:site_name" content="XieTaotao的博客">
+<meta property="og:description" content="VMware虚拟机安装Ubuntu20.041、准备工作1.1、一台性能较好的主机我安装在自己的笔记本上配置如下：  CPU: i7-9750H 内存: 16G 硬盘: 512G固态硬盘  1.2、VMware虚拟化软件VMwarre官网下载：https:&#x2F;&#x2F;customerconnect.vmware.com&#x2F;cn&#x2F;downloads&#x2F;#all_products选择这个VMware Workst">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/12/image5ce5e024d298e240.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/93aff4e844344de4ac393cba8793415f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5a-M5Zyf5bGx5LiL,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/11/image.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/11/imagee63158b05ee6098a.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/11/imagea9c95718b543775e.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/11/image537918ea9bef02b7.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/11/image5bf900fa8825f3e5.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/11/image89666cfca9a8b380.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/11/image0cb25969f17210ec.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/11/image5c29981a022c3e18.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/11/image6c14732a2b9317c0.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/11/image940fdd49a36bd32a.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/11/imageeb4efe97874f3686.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/11/image0f4fa317ef83a1df.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/11/image759babd2ed58d23c.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/12/image30615133b0dfff9c.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/12/image09a32fcd6109ad32.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/12/image37eabbf44d51dd3a.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/12/image7a1b286708bd56b0.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/11/image312e5c0bc939ffa6.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/11/imageb4d5730d152da480.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/11/image6adf44add3180c64.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/12/image243f9bb43c7665c1.png">
+<meta property="og:image" content="http://photo.dghtjn.cn/images/2022/04/12/imagee25f3a0b4b39a36b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/aa951fd3da02426a9032e1d18e7d69e4.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/724cc7ba17b5466388fb1cc0d8e78ab6.png">
+<meta property="article:published_time" content="2022-04-12T13:34:55.000Z">
+<meta property="article:modified_time" content="2022-04-12T13:37:42.583Z">
 <meta property="article:author" content="Xie Taotao">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://photo.dghtjn.cn/images/2022/04/12/image5ce5e024d298e240.png">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2022/04/12/%E5%AE%89%E8%A3%85Ubuntu20-04/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>XieTaotao的博客</title>
+  <title>VMware虚拟机安装Ubuntu20.04 | XieTaotao的博客</title>
   
 
 
@@ -140,9 +171,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -158,10 +190,9 @@
       <meta itemprop="name" content="XieTaotao的博客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/12/%E5%AE%89%E8%A3%85Ubuntu20-04/" class="post-title-link" itemprop="url">VMware虚拟机安装Ubuntu20.04</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          VMware虚拟机安装Ubuntu20.04
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -185,7 +216,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="VMware虚拟机安装Ubuntu20-04"><a href="#VMware虚拟机安装Ubuntu20-04" class="headerlink" title="VMware虚拟机安装Ubuntu20.04"></a>VMware虚拟机安装Ubuntu20.04</h1><h2 id="1、准备工作"><a href="#1、准备工作" class="headerlink" title="1、准备工作"></a>1、准备工作</h2><h3 id="1-1、一台性能较好的主机"><a href="#1-1、一台性能较好的主机" class="headerlink" title="1.1、一台性能较好的主机"></a>1.1、一台性能较好的主机</h3><p>我安装在自己的笔记本上配置如下：</p>
+        <h1 id="VMware虚拟机安装Ubuntu20-04"><a href="#VMware虚拟机安装Ubuntu20-04" class="headerlink" title="VMware虚拟机安装Ubuntu20.04"></a>VMware虚拟机安装Ubuntu20.04</h1><h2 id="1、准备工作"><a href="#1、准备工作" class="headerlink" title="1、准备工作"></a>1、准备工作</h2><h3 id="1-1、一台性能较好的主机"><a href="#1-1、一台性能较好的主机" class="headerlink" title="1.1、一台性能较好的主机"></a>1.1、一台性能较好的主机</h3><p>我安装在自己的笔记本上配置如下：</p>
 <ul>
 <li><strong>CPU:</strong> i7-9750H</li>
 <li><strong>内存:</strong> 16G</li>
@@ -279,144 +310,30 @@
 </ol>
 <hr>
 <h1 id="6、安装完成"><a href="#6、安装完成" class="headerlink" title="6、安装完成"></a>6、安装完成</h1>
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%89%E7%AF%87%E5%8D%9A%E5%AE%A2/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xie Taotao">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieTaotao的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%89%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">我的第三篇博客</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-04-11 20:51:57 / Modified: 22:42:58" itemprop="dateCreated datePublished" datetime="2022-04-11T20:51:57+08:00">2022-04-11</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="EC11编码器"><a href="#EC11编码器" class="headerlink" title="EC11编码器"></a>EC11编码器</h1><ul>
-<li>本文就从EC11编码器的结构，基本原理，电路连接，驱动代码和结果五个方面介绍EC11编码器的使用<h2 id="1、结构"><a href="#1、结构" class="headerlink" title="1、结构"></a>1、结构</h2><img src="https://img-blog.csdnimg.cn/ced8a82060484ba28c26fee9e4432028.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5a-M5Zyf5bGx5LiL,size_12,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="结构图"><br>EC11编码器有<em>S1,S2,A,B,C</em>五个引脚，其中<em>S1</em>和<em>S2</em>引脚类似于普通的按键，<em>A</em>，<em>B</em>，<em>C</em>引脚用来检测旋钮的转动方向。总共可以输出5种不同的操作信息：按下、正转、反转、按下正转、按下反转</li>
-</ul>
-<h2 id="2、一般电路连接方法"><a href="#2、一般电路连接方法" class="headerlink" title="2、一般电路连接方法"></a>2、一般电路连接方法</h2><p><img src="https://img-blog.csdnimg.cn/9514e9465cc048fb94434967a2d5b4de.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5a-M5Zyf5bGx5LiL,size_16,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="一般连接方法"></p>
-<h2 id="3、基本原理"><a href="#3、基本原理" class="headerlink" title="3、基本原理"></a>3、基本原理</h2><p>把编码器的<em>A，B</em>引脚接入逻辑分析仪，D4为<em>A</em>，D7为<em>B</em>。检测过程正转一格，反转一格得到如下波形。<br>所以检测旋转的方法有两种<br>&#x3D;&#x3D;①在<em>A</em>引脚的下降沿检测<em>B</em>引脚的电平&#x3D;&#x3D;<br>&#x3D;&#x3D;②在<em>A</em>引脚的上升沿检测<em>B</em>引脚的电平&#x3D;&#x3D;<br>实测②的误触律较小<br><img src="https://img-blog.csdnimg.cn/b1d0a36c3d7047d48fe81149c3e7db1e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5a-M5Zyf5bGx5LiL,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="逻辑分析仪"></p>
-<h2 id="4、驱动代码"><a href="#4、驱动代码" class="headerlink" title="4、驱动代码"></a>4、驱动代码</h2><p>Arduino平台，C++编写的简易读取方法</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Arduino.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EC11_DATA_key digitalRead(D5)  <span class="comment">//GPIO14</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EC11_DATA_A  digitalRead(D4)   <span class="comment">//GPIO2</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EC11_DATA_B  digitalRead(D3)   <span class="comment">//GPIO0</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int16_t</span> <span class="title">Encoder_EC11_Scan</span><span class="params">(<span class="type">int16_t</span> key,<span class="type">int16_t</span> EC11_A,<span class="type">int16_t</span> EC11_B)</span></span>;  </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">pinMode</span>(D3,INPUT_PULLUP); <span class="comment">//输入上拉</span></span><br><span class="line">  <span class="built_in">pinMode</span>(D4,INPUT_PULLUP); <span class="comment">//输入上拉</span></span><br><span class="line">  <span class="built_in">pinMode</span>(D5,INPUT_PULLUP); <span class="comment">//输入上拉  </span></span><br><span class="line"></span><br><span class="line">  Serial.<span class="built_in">begin</span>(<span class="number">115200</span>);   </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">Encoder_EC11_Scan</span>(EC11_DATA_key,EC11_DATA_A,EC11_DATA_B);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int16_t</span> <span class="title">Encoder_EC11_Scan</span><span class="params">(<span class="type">int16_t</span> key,<span class="type">int16_t</span> EC11_A,<span class="type">int16_t</span> EC11_B)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="type">static</span> <span class="type">int8_t</span> sta=<span class="number">0</span>,sta_key=<span class="number">0</span>;</span><br><span class="line">  <span class="type">int16_t</span> ScanResult = <span class="number">0</span>;   </span><br><span class="line">  <span class="keyword">if</span>(sta_key==<span class="number">0</span> &amp;&amp; key==<span class="number">1</span>)&#123;sta_key=<span class="number">1</span>;&#125;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(sta_key==<span class="number">1</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(key==<span class="number">0</span>)&#123;sta_key=<span class="number">2</span>;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(sta_key==<span class="number">2</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(key==<span class="number">1</span>)&#123;</span><br><span class="line">      sta_key=<span class="number">0</span>;</span><br><span class="line">      ScanResult=<span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(EC11_A==<span class="number">0</span> &amp;&amp; sta==<span class="number">0</span>)&#123;</span><br><span class="line">    sta=<span class="number">1</span>;</span><br><span class="line">  &#125; </span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(sta==<span class="number">1</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(EC11_A==<span class="number">1</span>)&#123;</span><br><span class="line">      <span class="keyword">if</span>(EC11_B==<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(key==<span class="number">0</span>)&#123;ScanResult=<span class="number">2</span>;sta_key=<span class="number">0</span>;&#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;ScanResult=<span class="number">1</span>;&#125;</span><br><span class="line">      &#125;      </span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">if</span>(EC11_B==<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(key==<span class="number">0</span>)&#123;ScanResult=<span class="number">-2</span>;sta_key=<span class="number">0</span>;&#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;ScanResult=<span class="number">-1</span>;&#125;</span><br><span class="line">      &#125;</span><br><span class="line">      sta=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(ScanResult!=<span class="number">0</span>)<span class="built_in">printf</span>(<span class="string">&quot;%d\r\n&quot;</span>,ScanResult);	<span class="comment">//输出查看，不需要可删除</span></span><br><span class="line">  <span class="keyword">return</span> ScanResult;      <span class="comment">//返回值的取值：   0：无动作；  1：正转； -1：反转；  2：按下正转； -2：按下反转； 3：只按下并松开</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="5、检测结果"><a href="#5、检测结果" class="headerlink" title="5、检测结果"></a>5、检测结果</h2><p><img src="https://img-blog.csdnimg.cn/f8d9af9c89d640efb24308f9431c7d2d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5a-M5Zyf5bGx5LiL,size_11,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="结果"></p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%89%E7%AF%87%E5%8D%9A%E5%AE%A2/" rel="prev" title="我的第三篇博客">
+      <i class="fa fa-chevron-left"></i> 我的第三篇博客
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xie Taotao">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieTaotao的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">我的第二篇博客</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-04-11 18:20:24" itemprop="dateCreated datePublished" datetime="2022-04-11T18:20:24+08:00">2022-04-11</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -469,6 +386,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#VMware%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85Ubuntu20-04"><span class="nav-number">1.</span> <span class="nav-text">VMware虚拟机安装Ubuntu20.04</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.1.</span> <span class="nav-text">1、准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E3%80%81%E4%B8%80%E5%8F%B0%E6%80%A7%E8%83%BD%E8%BE%83%E5%A5%BD%E7%9A%84%E4%B8%BB%E6%9C%BA"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1、一台性能较好的主机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E3%80%81VMware%E8%99%9A%E6%8B%9F%E5%8C%96%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2、VMware虚拟化软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E3%80%81Ubuntu%E9%95%9C%E5%83%8F"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3、Ubuntu镜像</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85"><span class="nav-number">1.2.</span> <span class="nav-text">2、开始安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1%E3%80%81%E5%AE%89%E8%A3%85%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1、安装设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2%E3%80%81%E6%97%B6%E5%8C%BA%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2、时区设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3%E3%80%81%E8%AF%AD%E8%A8%80%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.3、语言设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4%E3%80%81root%E5%AF%86%E7%A0%81%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.2.4.</span> <span class="nav-text">2.4、root密码设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E5%AE%89%E8%A3%85VMware-Tools"><span class="nav-number">1.3.</span> <span class="nav-text">3、安装VMware Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1%E3%80%81%E8%AE%BE%E7%BD%AE%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">3.1、设置重新安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2%E3%80%81%E7%B3%BB%E7%BB%9F%E9%87%8C%E5%AE%89%E8%A3%85"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">3.2、系统里安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3%E3%80%81%E5%88%9B%E5%BB%BA%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">1.3.0.3.</span> <span class="nav-text">3.3、创建共享文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4%E3%80%81%E6%B5%8B%E8%AF%95%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">1.3.0.4.</span> <span class="nav-text">3.4、测试共享文件夹</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E6%9B%B4%E6%8D%A2apt%E4%B8%BA%E5%9B%BD%E5%86%85%E6%BA%90"><span class="nav-number">1.4.</span> <span class="nav-text">4、更换apt为国内源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="nav-number">1.5.</span> <span class="nav-text">5、系统优化（可选）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1%E3%80%81%E9%81%BF%E5%85%8D%E6%AF%8F%E6%AC%A1sudo%E9%83%BD%E8%A6%81%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">5.1、避免每次sudo都要输入密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2%E3%80%81%E5%85%B3%E9%97%AD%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%8A%A8%E4%BC%91%E7%9C%A0"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">5.2、关闭系统自动休眠</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3%E3%80%81%E5%AE%89%E8%A3%85SSH%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.5.0.3.</span> <span class="nav-text">5.3、安装SSH服务</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6%E3%80%81%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90"><span class="nav-number">2.</span> <span class="nav-text">6、安装完成</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
