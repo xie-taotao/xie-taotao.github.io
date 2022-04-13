@@ -117,7 +117,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -147,6 +147,169 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/13/%E3%80%90Linux%E5%AD%A6%E4%B9%A0%E3%80%91%E2%91%A3%E7%A1%AC%E7%9B%98%E7%AE%A1%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xie Taotao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieTaotao的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | XieTaotao的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/13/%E3%80%90Linux%E5%AD%A6%E4%B9%A0%E3%80%91%E2%91%A3%E7%A1%AC%E7%9B%98%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">【Linux学习】④硬盘管理</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-13 19:46:17" itemprop="dateCreated datePublished" datetime="2022-04-13T19:46:17+08:00">2022-04-13</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/13/%E3%80%90Linux%E5%AD%A6%E4%B9%A0%E3%80%91%E2%91%A2%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xie Taotao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieTaotao的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | XieTaotao的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/13/%E3%80%90Linux%E5%AD%A6%E4%B9%A0%E3%80%91%E2%91%A2%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84/" class="post-title-link" itemprop="url">【Linux学习】③用户和组</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-04-13 19:42:34 / 修改时间：21:36:56" itemprop="dateCreated datePublished" datetime="2022-04-13T19:42:34+08:00">2022-04-13</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd 选项 用户名</span><br></pre></td></tr></table></figure>
+<p>选项:</p>
+<ul>
+<li>-c comment 指定一段注释性描述。</li>
+<li>-d 目录 指定用户主目录，如果此目录不存在，则同时使用-m选项，可以创建主目录。</li>
+<li>-g 用户组 指定用户所属的用户组。</li>
+<li>-G 用户组，用户组 指定用户所属的附加组。</li>
+<li>-s Shell文件 指定用户的登录Shell。</li>
+<li>-u 用户号 指定用户的用户号，如果同时有-o选项，则可以重复使用其他用户的标识号。</li>
+<li>用户名: 指定新账号的登录名。</li>
+</ul>
+<h1 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd username</span><br></pre></td></tr></table></figure>
+
+<h1 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su username</span><br></pre></td></tr></table></figure>
+
+<h1 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo userdel -r username</span><br></pre></td></tr></table></figure>
+<p>加上-r可以删除&#x2F;home&#x2F;路径下的用户文件夹，否则不能</p>
+<h1 id="更改用户所属组"><a href="#更改用户所属组" class="headerlink" title="更改用户所属组"></a>更改用户所属组</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -aG &lt;目标组&gt; &lt;用户名&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="文件所属用户"><a href="#文件所属用户" class="headerlink" title="文件所属用户"></a>文件所属用户</h1><p>使用<code>chown</code>来修改文件所属用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chown</span> [–R] 属主名 文件名</span><br><span class="line"><span class="built_in">chown</span> [-R] 属主名：属组名 文件名</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">（1）  添加用户newxxt-226及组“newzs-112”，并创建此用户主目录；</span><br><span class="line"></span><br><span class="line">（2）  将用户newzs-112添加到sudo组里；</span><br><span class="line"></span><br><span class="line">（3）  将shell脚本“/home/xxt-226/shell-226/jiaoben-226.sh”复制到newxxt-226用户主目录下，并以newxxt-226用户执行此shell脚本；</span><br><span class="line"></span><br><span class="line">（4）  将shell脚本“/home/xxt-226/shell-226/jiaoben-226.sh”的所有者从xxt-226改成newxxt-226，并以newxxt-226用户执行此脚本。</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://photo.dghtjn.cn/images/2022/04/13/_20220413204114.png" alt="_20220413204114.png"><br><img src="https://photo.dghtjn.cn/images/2022/04/13/_20220413211227.png" alt="_20220413211227.png"><br><img src="https://photo.dghtjn.cn/images/2022/04/13/_20220413212727.png" alt="_20220413212727.png"><br><img src="https://photo.dghtjn.cn/images/2022/04/13/_20220413213020.png" alt="_20220413213020.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -186,7 +349,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-04-13 19:08:07 / 修改时间：19:15:37" itemprop="dateCreated datePublished" datetime="2022-04-13T19:08:07+08:00">2022-04-13</time>
+      <time title="创建时间：2022-04-13 19:08:07 / 修改时间：19:42:41" itemprop="dateCreated datePublished" datetime="2022-04-13T19:08:07+08:00">2022-04-13</time>
     </span>
 
   
