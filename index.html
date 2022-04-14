@@ -192,7 +192,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-14 01:56:02" itemprop="dateModified" datetime="2022-04-14T01:56:02+08:00">2022-04-14</time>
+      <time title="修改时间：2022-04-14 13:42:01" itemprop="dateModified" datetime="2022-04-14T13:42:01+08:00">2022-04-14</time>
     </span>
 
   
@@ -205,43 +205,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="1、硬盘管理工具"><a href="#1、硬盘管理工具" class="headerlink" title="1、硬盘管理工具"></a>1、硬盘管理工具</h1><h2 id="GParted"><a href="#GParted" class="headerlink" title="GParted"></a>GParted</h2><p>可以直接用<code>apt-get install gparted</code>安装，优点是图形化界面，便于操作<br><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413221409.png" alt="_20220413221409.png"><br><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413221534.png" alt="_20220413221534.png"><br><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413221605.png" alt="_20220413221605.png"></p>
-<h2 id="cfdisk"><a href="#cfdisk" class="headerlink" title="cfdisk"></a>cfdisk</h2><p>系统自带，不用额外安装，命令行界面比较优雅</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cfdisk /dev/sda</span><br><span class="line">cfdisk /dev/sdb</span><br></pre></td></tr></table></figure>
-<p><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413222530.png" alt="_20220413222530.png"><br><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413222539.png" alt="_20220413222539.png"><br><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413222737.png" alt="_20220413222737.png"></p>
-<h1 id="2、添加硬盘操作示例"><a href="#2、添加硬盘操作示例" class="headerlink" title="2、添加硬盘操作示例"></a>2、添加硬盘操作示例</h1><ol>
-<li><p>在虚拟机“管理”菜单中选择“虚拟机设置”，在“硬件”中点击“硬盘”，选择“添加”，添加10G硬盘；<br><a target="_blank" rel="noopener" href="https://photo.dghtjn.cn/image/dzfW"><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220414011404.png" alt="_20220414011404.png"></a></p>
-</li>
-<li><p>在虚拟机终端，使用命令：<code>sudo fdisk –l</code>查看新添加的硬盘的设备名称，如<code>disk /dev/sdb</code>；<br><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413222158.png" alt="_20220413222158.png"></p>
-</li>
-<li><p>使用csdisk工具对硬盘<code>/dev/sdb</code>进行分区，分为两个5G的分区<code>/dev/sdb1</code>和<code>/dev/sdb2</code>；<br><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413222737.png" alt="_20220413222737.png"></p>
-</li>
-<li><p>分别对两个分区进行格式化（即建立文件系统）为ext4和FAT32两种文件系统</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mkfs.ext4 -t ext4 /dev/sdb1</span><br><span class="line">sudo mkfs.vfat -F 32 /dev/sdb2</span><br></pre></td></tr></table></figure>
-<p><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413223106.png" alt="_20220413223106.png"><br><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413223451.png" alt="_20220413223451.png"><br><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413225644.png" alt="_20220413225644.png"></p>
-</li>
-<li><p>在用户主目录<code>/home/xxt</code>下建立<code>xxt-112</code>目录，进入<code>xxt-112</code>目录，创建<code>EXT4-112</code>和<code>FAT32-112</code>目录，作为<code> /dev/sdb1</code>和<code>/dev/sdb2</code>分区的挂载点；<br><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413223741.png" alt="_20220413223741.png"></p>
-</li>
-<li><p>手动挂载：分别将<code>/dev/sdb1</code>和<code>/dev/sdb2</code>挂载到挂载点<code>/home/xxt/xxt-112/EXT4-112和/home/xxt/xxt-112/FAT32-112</code>。如使用命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mount /dev/sdb1 /home/xxt/xxt-112/EXT4-112</span><br><span class="line">sudo mount /dev/sdb2 /home/xxt/xxt-112/FAT32-112</span><br></pre></td></tr></table></figure>
-<p><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413223917.png" alt="_20220413223917.png"><br><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413223942.png" alt="_20220413223942.png"></p>
-</li>
-<li><p>在&#x2F;home&#x2F;xxt&#x2F;xxt-112&#x2F;EXT4-112目录下建立ext4-112.sh脚本显示:“This is an ext4 files-system!”，并执行此脚本；<br><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413224200.png" alt="_20220413224200.png"></p>
-</li>
-<li><p>在&#x2F;home&#x2F;xxt&#x2F;xxt-112&#x2F;FAT32-112目录下建立FAT32-112.sh脚本显示:“This is an fat32 files-system!”，并执行此脚本。<br><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413224453.png" alt="_20220413224453.png"><br><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413224512.png" alt="_20220413224512.png"><br><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413224559.png" alt="_20220413224559.png"></p>
-</li>
-<li><p>分别将&#x2F;dev&#x2F;sdb1和&#x2F;dev&#x2F;sdb2从挂载点卸载，使用命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo umount /dev/sdb1</span><br><span class="line">sudo umount /dev/sdb2</span><br></pre></td></tr></table></figure>
-<p><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413224702.png" alt="_20220413224702.png"></p>
-</li>
-<li><p>分别进入<code>/home/xxt/xxt-112/EXT4-112</code>和<code>/home/xxt/xxt-112/FAT32-112</code>两个目录，使用<code>ls</code>命令，发现脚本<code>ext4-112.sh</code>和<code>FAT32-112.sh</code>不见了,因为挂载的磁盘已经被卸载了</p>
-</li>
-<li><p>自动挂载：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> /etc/fstab  /etc/fstab.bak；</span><br><span class="line">打开/etc/fstab文件，再末尾添加：</span><br><span class="line">/dev/sdb1 /home/zs-112/zsfenqu-112/EXT4-11 ext4 defaults  0  0</span><br><span class="line">/dev/sdb2 /home/zs-112/zsfenqu-112/FAT32-112 fat32 defaults   0  0</span><br><span class="line">使用 sudo mount –a，进行重新挂载。然后使用<span class="built_in">df</span> –h命令查看是否挂载成功。</span><br></pre></td></tr></table></figure>
-<p><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413225258.png" alt="_20220413225258.png"><br><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413225738.png" alt="_20220413225738.png"><br>挂载成功</p>
-</li>
-</ol>
-
+          <h1 id="1、硬盘管理工具"><a href="#1、硬盘管理工具" class="headerlink" title="1、硬盘管理工具"></a>1、硬盘管理工具</h1><h2 id="GParted"><a href="#GParted" class="headerlink" title="GParted"></a>GParted</h2><p>可以直接用<code>apt-get install gparted</code>安装，优点是图形化界面，便于操作<br><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413221409.png" alt="_20220413221409.png"><br><img src="https://photo.dghtjn.cn/images/2022/04/14/_20220413221534.png" alt="_20220413221534.png"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/04/13/%E3%80%90Linux%E5%AD%A6%E4%B9%A0%E3%80%91%E2%91%A3%E7%A1%AC%E7%9B%98%E7%AE%A1%E7%90%86/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -295,9 +267,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-04-13 19:42:34 / 修改时间：21:36:56" itemprop="dateCreated datePublished" datetime="2022-04-13T19:42:34+08:00">2022-04-13</time>
+      <time title="创建时间：2022-04-13 19:42:34" itemprop="dateCreated datePublished" datetime="2022-04-13T19:42:34+08:00">2022-04-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-14 02:52:40" itemprop="dateModified" datetime="2022-04-14T02:52:40+08:00">2022-04-14</time>
     </span>
 
   
@@ -319,24 +297,15 @@
 <li>-G 用户组，用户组 指定用户所属的附加组。</li>
 <li>-s Shell文件 指定用户的登录Shell。</li>
 <li>-u 用户号 指定用户的用户号，如果同时有-o选项，则可以重复使用其他用户的标识号。</li>
-<li>用户名: 指定新账号的登录名。</li>
-</ul>
-<h1 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd username</span><br></pre></td></tr></table></figure>
-
-<h1 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su username</span><br></pre></td></tr></table></figure>
-
-<h1 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo userdel -r username</span><br></pre></td></tr></table></figure>
-<p>加上-r可以删除&#x2F;home&#x2F;路径下的用户文件夹，否则不能</p>
-<h1 id="更改用户所属组"><a href="#更改用户所属组" class="headerlink" title="更改用户所属组"></a>更改用户所属组</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -aG &lt;目标组&gt; &lt;用户名&gt;</span><br></pre></td></tr></table></figure>
-
-<h1 id="文件所属用户"><a href="#文件所属用户" class="headerlink" title="文件所属用户"></a>文件所属用户</h1><p>使用<code>chown</code>来修改文件所属用户</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chown</span> [–R] 属主名 文件名</span><br><span class="line"><span class="built_in">chown</span> [-R] 属主名：属组名 文件名</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">（1）  添加用户newxxt-226及组“newzs-112”，并创建此用户主目录；</span><br><span class="line"></span><br><span class="line">（2）  将用户newzs-112添加到sudo组里；</span><br><span class="line"></span><br><span class="line">（3）  将shell脚本“/home/xxt-226/shell-226/jiaoben-226.sh”复制到newxxt-226用户主目录下，并以newxxt-226用户执行此shell脚本；</span><br><span class="line"></span><br><span class="line">（4）  将shell脚本“/home/xxt-226/shell-226/jiaoben-226.sh”的所有者从xxt-226改成newxxt-226，并以newxxt-226用户执行此脚本。</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://photo.dghtjn.cn/images/2022/04/13/_20220413204114.png" alt="_20220413204114.png"><br><img src="https://photo.dghtjn.cn/images/2022/04/13/_20220413211227.png" alt="_20220413211227.png"><br><img src="https://photo.dghtjn.cn/images/2022/04/13/_20220413212727.png" alt="_20220413212727.png"><br><img src="https://photo.dghtjn.cn/images/2022/04/13/_20220413213020.png" alt="_20220413213020.png"></p>
-
+<li>用户名: 指定新账号的登录名。
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/04/13/%E3%80%90Linux%E5%AD%A6%E4%B9%A0%E3%80%91%E2%91%A2%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -390,9 +359,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-04-13 19:08:07 / 修改时间：19:42:41" itemprop="dateCreated datePublished" datetime="2022-04-13T19:08:07+08:00">2022-04-13</time>
+      <time title="创建时间：2022-04-13 19:08:07" itemprop="dateCreated datePublished" datetime="2022-04-13T19:08:07+08:00">2022-04-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-14 02:52:33" itemprop="dateModified" datetime="2022-04-14T02:52:33+08:00">2022-04-14</time>
     </span>
 
   
@@ -408,35 +383,19 @@
           <h1 id="1、Linux文件系统"><a href="#1、Linux文件系统" class="headerlink" title="1、Linux文件系统"></a>1、Linux文件系统</h1><p>Linux 系统是一种典型的 <strong>多用户系统</strong> ，不同的用户处于不同的地位，拥有不同的权限。为了保护系统的安全性，Linux 系统对不同的用户访问同一文件（包括目录文件）的权限做了不同的规定。</p>
 <p>Linux下文件的权限类型一般包括</p>
 <ul>
-<li>读(r)</li>
-<li>写(w)</li>
-<li>执行(x)</li>
-</ul>
-<h1 id="2、查看文件权限"><a href="#2、查看文件权限" class="headerlink" title="2、查看文件权限"></a>2、查看文件权限</h1><h3 id="使用-ls-l-或者-ll-命令可以查看文件权限"><a href="#使用-ls-l-或者-ll-命令可以查看文件权限" class="headerlink" title="使用 ls -l 或者 ll 命令可以查看文件权限"></a>使用 <code>ls -l</code> 或者 <code>ll</code> 命令可以查看文件权限</h3><p><img src="https://photo.dghtjn.cn/images/2022/04/13/_20220413181051.png" alt="_20220413181051.png"><br><img src="https://www.runoob.com/wp-content/uploads/2014/06/file-llls22.jpg"><br><img src="https://www.runoob.com/wp-content/uploads/2014/06/363003_1227493859FdXT.png"><br><code>d</code> 在 Linux 中代表该文件是一个目录文件。<br>在 Linux 中第一个字符代表这个文件是目录、文件或链接文件等等，常用的还有</p>
-<ul>
-<li><code>d</code> 目录</li>
-<li><code>-</code> 文件</li>
-<li><code>l</code> 链接文档</li>
-<li><code>b</code> 装置文件里面的可供储存的接口设备</li>
-<li><code>c</code> 装置文件里面的串行端口设备，例如键盘、鼠标</li>
-</ul>
-<h1 id="3、使用chmod来修改文件的权限"><a href="#3、使用chmod来修改文件的权限" class="headerlink" title="3、使用chmod来修改文件的权限"></a>3、使用<code>chmod</code>来修改文件的权限</h1><p>在用户主目录下，创建名命为<code>shell-226</code>的目录,并在此目录下创建名为 <code>jiaoben-226.sh</code> 的脚本文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> ./shell-226</span><br><span class="line"><span class="built_in">touch</span> ./shell-226/jiaoben-226.sh</span><br></pre></td></tr></table></figure>
-
-<p>使用nano编辑器写入内容：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Hello world, I am shell script!&quot;</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://photo.dghtjn.cn/images/2022/04/13/_20220413185038.png" alt="_20220413185038.png"></p>
-<ul>
-<li><p>将脚本权限修改为任何人都不可以执行<br><code>chmod 000 jiaoben-226.sh</code><br><code>ls -l</code>查看文件权限<br>这时执行脚本是无法执行的<br><img src="https://photo.dghtjn.cn/images/2022/04/13/_20220413185259.png" alt="_20220413185259.png"></p>
+<li><p>读(r)</p>
 </li>
-<li><p>只有<code>root</code>用户或者使用<code>sudo</code>可以直接执行<br><img src="https://photo.dghtjn.cn/images/2022/04/13/_20220413185317.png" alt="_20220413185317.png"></p>
+<li><p>写(w)</p>
 </li>
-<li><p>再将脚本权限修改为任何人都可以执行<br><code>chmod 777 jiaoben-226.sh</code><br><code>ls -l</code>查看文件权限<br>这时执行脚本正常执行<br><img src="https://photo.dghtjn.cn/images/2022/04/13/_20220413185344.png" alt="_20220413185344.png"></p>
-</li>
-<li><p>解释一下000、777、775这种数字是怎么来的：<br>Linux权限有一个分数的概念，<code>r:4</code> <code>w:2</code> <code>x:1</code>所以 <strong>775&#x3D;[4+2+1][4+2+1][4+0+1]</strong> 其他的也可以以此类推</p>
-</li>
-</ul>
-
+<li><p>执行(x)</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/04/13/%E3%80%90Linux%E5%AD%A6%E4%B9%A0%E3%80%91%E2%91%A1%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -490,9 +449,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-04-13 17:55:22 / 修改时间：17:55:42" itemprop="dateCreated datePublished" datetime="2022-04-13T17:55:22+08:00">2022-04-13</time>
+      <time title="创建时间：2022-04-13 17:55:22" itemprop="dateCreated datePublished" datetime="2022-04-13T17:55:22+08:00">2022-04-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-14 02:52:14" itemprop="dateModified" datetime="2022-04-14T02:52:14+08:00">2022-04-14</time>
     </span>
 
   
@@ -509,94 +474,15 @@
 <ul>
 <li><strong>CPU:</strong> i7-9750H</li>
 <li><strong>内存:</strong> 16G</li>
-<li><strong>硬盘:</strong> 512G固态硬盘</li>
-</ul>
-<h2 id="1-2、VMware虚拟化软件"><a href="#1-2、VMware虚拟化软件" class="headerlink" title="1.2、VMware虚拟化软件"></a>1.2、VMware虚拟化软件</h2><p>VMwarre官网下载：<a target="_blank" rel="noopener" href="https://customerconnect.vmware.com/cn/downloads/#all_products">https://customerconnect.vmware.com/cn/downloads/#all_products</a><br>选择这个VMware Workstation Pro<br><img src="https://photo.dghtjn.cn/images/2022/04/12/image5ce5e024d298e240.png" alt="image5ce5e024d298e240.png"></p>
-<h2 id="1-3、Ubuntu镜像"><a href="#1-3、Ubuntu镜像" class="headerlink" title="1.3、Ubuntu镜像"></a>1.3、Ubuntu镜像</h2><ul>
-<li>可以去<a target="_blank" rel="noopener" href="https://cn.ubuntu.com/download/desktop">Ubuntu官网</a>的下载界面查看主机是否满足最低配置，这里选择<strong>LTS</strong>版本，更稳定。<br><img src="https://img-blog.csdnimg.cn/93aff4e844344de4ac393cba8793415f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5a-M5Zyf5bGx5LiL,size_20,color_FFFFFF,t_70,g_se,x_16"></li>
-</ul>
-<hr>
-<h1 id="2、开始安装"><a href="#2、开始安装" class="headerlink" title="2、开始安装"></a>2、开始安装</h1><h2 id="2-1、安装设置"><a href="#2-1、安装设置" class="headerlink" title="2.1、安装设置"></a>2.1、安装设置</h2><ul>
-<li><p>打开VMware选择新建虚拟机,选择创建典型虚拟机,选择准备工作中下载好的 <strong>.iso</strong> 镜像<br><img src="https://photo.dghtjn.cn/images/2022/04/11/image.png" alt="image.png"><br><img src="https://photo.dghtjn.cn/images/2022/04/11/imagee63158b05ee6098a.png" alt="imagee63158b05ee6098a.png"></p>
-</li>
-<li><p>选择之前下载好的Ubuntu镜像，一般这时候VMware会自动识别你的镜像,这时候可以选择简易安装，省去一些麻烦<br><img src="https://photo.dghtjn.cn/images/2022/04/11/imagea9c95718b543775e.png" alt="imagea9c95718b543775e.png"></p>
-</li>
-<li><p>设置自定义的计算机名字和密码<br><img src="https://photo.dghtjn.cn/images/2022/04/11/image537918ea9bef02b7.png" alt="image537918ea9bef02b7.png"></p>
-</li>
-<li><p>选择一个合适的路径来安装这台虚拟机（安装在固态硬盘里开机较快）<br><img src="https://photo.dghtjn.cn/images/2022/04/11/image5bf900fa8825f3e5.png" alt="image5bf900fa8825f3e5.png"></p>
-</li>
-<li><p>选择一个合适的硬盘容量（建议将虚拟磁盘存储为单个文件，这样比较好管理)<br><img src="https://photo.dghtjn.cn/images/2022/04/11/image89666cfca9a8b380.png" alt="image89666cfca9a8b380.png"></p>
-</li>
-<li><p>到这可以自定义虚拟机的硬件配置或者使用推荐配置，这里我多加了两个CPU<br><img src="https://photo.dghtjn.cn/images/2022/04/11/image0cb25969f17210ec.png" alt="image0cb25969f17210ec.png"><br><img src="https://photo.dghtjn.cn/images/2022/04/11/image5c29981a022c3e18.png" alt="image5c29981a022c3e18.png"></p>
-</li>
-<li><p>点击完成后开始安装，一般十分钟左右可以安装完成，视网络情况好坏<br><img src="https://photo.dghtjn.cn/images/2022/04/11/image6c14732a2b9317c0.png" alt="image6c14732a2b9317c0.png"></p>
-</li>
-</ul>
-<h2 id="2-2、时区设置"><a href="#2-2、时区设置" class="headerlink" title="2.2、时区设置"></a>2.2、时区设置</h2><ul>
-<li>在设置里找到 <strong>Date&amp;Time</strong> 进入 <strong>Time Zone</strong><br><img src="https://photo.dghtjn.cn/images/2022/04/11/image940fdd49a36bd32a.png" alt="image940fdd49a36bd32a.png"></li>
-<li>设置为上海时间<br><img src="https://photo.dghtjn.cn/images/2022/04/11/imageeb4efe97874f3686.png" alt="imageeb4efe97874f3686.png"></li>
-</ul>
-<h2 id="2-3、语言设置"><a href="#2-3、语言设置" class="headerlink" title="2.3、语言设置"></a>2.3、语言设置</h2><ul>
-<li>在设置里找到语言设置，安装简体中文后把汉语移动到最顶端后，最后重启系统<br><img src="https://photo.dghtjn.cn/images/2022/04/11/image0f4fa317ef83a1df.png" alt="image0f4fa317ef83a1df.png"></li>
-<li>重新开机后系统会提示要不要更改用户目录文件夹的名称，建议不要修改，保留旧的名称<br><img src="https://photo.dghtjn.cn/images/2022/04/11/image759babd2ed58d23c.png" alt="image759babd2ed58d23c.png"></li>
-</ul>
-<h2 id="2-4、root密码设置"><a href="#2-4、root密码设置" class="headerlink" title="2.4、root密码设置"></a>2.4、root密码设置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd</span><br></pre></td></tr></table></figure>
-<ul>
-<li>使用 <strong>sudo -i</strong> 或者 <strong>sudo root</strong> 进入root用户模式</li>
-</ul>
-<hr>
-<h1 id="3、安装VMware-Tools"><a href="#3、安装VMware-Tools" class="headerlink" title="3、安装VMware Tools"></a>3、安装VMware Tools</h1><ul>
-<li>VMware Tools:只有在VMware虚拟机中安装好了VMware Tools，才能实现主机与虚拟机之间的文件共享，同时可支持自由拖拽的功能，鼠标也可在虚拟机与主机之间自由移动（不用再按ctrl+alt），且虚拟机屏幕也可实现全屏化</li>
-</ul>
-<h2 id="3-1、设置重新安装"><a href="#3-1、设置重新安装" class="headerlink" title="3.1、设置重新安装"></a>3.1、设置重新安装</h2><ul>
-<li>在虚拟机标签上右键选择重新安装VMware Tools，不知道是系统的bug还是VMware的bug，如果不重新安装创建的共享文件夹不能同步，所以这里重装一次。安装的过程大概是VMware会将VMware Tools载入到虚拟机的虚拟光驱中，这样在虚拟机里就可以直接安装了<br><img src="https://photo.dghtjn.cn/images/2022/04/12/image30615133b0dfff9c.png" alt="image30615133b0dfff9c.png"></li>
-<li>如果重新安装是灰色的，就要在设置里将虚拟CD <strong>已连接</strong> 和 <strong>启动时连接</strong> 打开<br><img src="https://photo.dghtjn.cn/images/2022/04/12/image09a32fcd6109ad32.png" alt="image09a32fcd6109ad32.png"></li>
-</ul>
-<h2 id="3-2、系统里安装"><a href="#3-2、系统里安装" class="headerlink" title="3.2、系统里安装"></a>3.2、系统里安装</h2><ul>
-<li>在虚拟机里打开CD，将VMwareTools这个压缩包复制到你的用户目录下<br><img src="https://photo.dghtjn.cn/images/2022/04/12/image37eabbf44d51dd3a.png" alt="image37eabbf44d51dd3a.png"></li>
-<li>选择文件解压到当前目录（Linux里的中文叫提取）<br><img src="https://photo.dghtjn.cn/images/2022/04/12/image7a1b286708bd56b0.png" alt="image7a1b286708bd56b0.png"></li>
-<li>进入终端，进入到解压出来的目录中执行<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./vmware-install.pl</span><br></pre></td></tr></table></figure>
-然后一路回车，使用默认选项安装即可</li>
-</ul>
-<h2 id="3-3、创建共享文件夹"><a href="#3-3、创建共享文件夹" class="headerlink" title="3.3、创建共享文件夹"></a>3.3、创建共享文件夹</h2><ul>
-<li>首先在设置里面把这个共享文件夹设置成总是启用<br><img src="https://photo.dghtjn.cn/images/2022/04/11/image312e5c0bc939ffa6.png" alt="image312e5c0bc939ffa6.png"></li>
-<li>点击添加，在主机里选择一个文件夹作为共享的文件夹<br><img src="https://photo.dghtjn.cn/images/2022/04/11/imageb4d5730d152da480.png" alt="imageb4d5730d152da480.png"></li>
-<li>操作完记得点击保存</li>
-</ul>
-<h2 id="3-4、测试共享文件夹"><a href="#3-4、测试共享文件夹" class="headerlink" title="3.4、测试共享文件夹"></a>3.4、测试共享文件夹</h2><ul>
-<li>在虚拟机的 <strong>&#x2F;mnt&#x2F;hgfs&#x2F;</strong> 目录下面就是上一步中创建的共享文件夹</li>
-</ul>
-<p><img src="https://photo.dghtjn.cn/images/2022/04/11/image6adf44add3180c64.png" alt="image6adf44add3180c64.png"></p>
-<ul>
-<li>使用nano编辑器在这里创建一个文件进行测试<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /mnt/hgfs/XXT-226/wenjian-226.doc</span><br></pre></td></tr></table></figure></li>
-<li>写入一些内容：<strong>学习ubuntu 20.04，学号：226</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + o  写入</span><br><span class="line">Ctrl + x  离开</span><br></pre></td></tr></table></figure>
-<img src="https://photo.dghtjn.cn/images/2022/04/12/image243f9bb43c7665c1.png" alt="image243f9bb43c7665c1.png"></li>
-<li>最后在主机的文件夹中查看，有修改过的文件表示共享文件夹创建成功</li>
-</ul>
-<p><img src="https://photo.dghtjn.cn/images/2022/04/12/imagee25f3a0b4b39a36b.png" alt="imagee25f3a0b4b39a36b.png"></p>
-<hr>
-<h1 id="4、更换apt为国内源"><a href="#4、更换apt为国内源" class="headerlink" title="4、更换apt为国内源"></a>4、更换apt为国内源</h1><ul>
-<li>由于镜像源在国外的问题，在国内安装软件可能会比较慢，所以需要更换到国内的镜像站，使用以下命令更换阿里云镜像：</li>
-<li>备份原来的源文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bak</span><br></pre></td></tr></table></figure></li>
-<li>修改源文件 <strong>&#x2F;etc&#x2F;apt&#x2F;sources.list</strong>  为:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装其它版本ubuntu时不适用</span></span><br><span class="line"><span class="comment">#可使用nano或者vim编辑器编辑，具体用法不多介绍</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure></li>
-<li>更新软件列表<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure></li>
-</ul>
-<hr>
-<h1 id="5、系统优化（可选）"><a href="#5、系统优化（可选）" class="headerlink" title="5、系统优化（可选）"></a>5、系统优化（可选）</h1><h2 id="5-1、避免每次sudo都要输入密码"><a href="#5-1、避免每次sudo都要输入密码" class="headerlink" title="5.1、避免每次sudo都要输入密码"></a>5.1、避免每次sudo都要输入密码</h2><ul>
-<li>配置一下visudo<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo visudo</span><br></pre></td></tr></table></figure></li>
-<li>在文末添加自己的用户名<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">（你的用户名） ALL=(ALL) NOPASSWD: ALL</span><br></pre></td></tr></table></figure>
-<h2 id="5-2、关闭系统自动休眠"><a href="#5-2、关闭系统自动休眠" class="headerlink" title="5.2、关闭系统自动休眠"></a>5.2、关闭系统自动休眠</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target</span><br></pre></td></tr></table></figure>
-<h2 id="5-3、安装SSH服务"><a href="#5-3、安装SSH服务" class="headerlink" title="5.3、安装SSH服务"></a>5.3、安装SSH服务</h2></li>
-<li>使用 <strong>sudo ps -e |grep ssh</strong> 检查是否启动了ssh服务<br><img src="https://img-blog.csdnimg.cn/aa951fd3da02426a9032e1d18e7d69e4.png" alt="请添加图片描述"><br>如果有<strong>sshd</strong>服务就说明已经有了，如果没有则使用以下命令安装<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openssh-server</span><br></pre></td></tr></table></figure></li>
-<li>使用<strong>service</strong>服务启动ssh服务<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service ssh start</span><br></pre></td></tr></table></figure></li>
-<li>启动服务后可使用ssh工具连接默认<strong>端口22</strong>这里不再赘述</li>
-<li>ssh服务默认不允许root用户直接登录，如果有需求可修改 <strong>&#x2F;etc&#x2F;ssh&#x2F;sshd_config</strong> 文件中的** <strong>PermitRootLogin</strong> 选项为 <strong>yes</strong><br><img src="https://img-blog.csdnimg.cn/724cc7ba17b5466388fb1cc0d8e78ab6.png" alt="请添加图片描述"></li>
-</ul>
-<ol start="5">
-<li>最后重启ssh服务后即可用root账号登录<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/ssh restart</span><br></pre></td></tr></table></figure></li>
-</ol>
-<hr>
-<h1 id="6、安装完成"><a href="#6、安装完成" class="headerlink" title="6、安装完成"></a>6、安装完成</h1>
+<li><strong>硬盘:</strong> 512G固态硬盘
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/04/13/%E3%80%90Linux%E5%AD%A6%E4%B9%A0%E3%80%91%E2%91%A0VMware%E5%AE%89%E8%A3%85Ubuntu20-04/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
