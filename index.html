@@ -186,7 +186,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-05-08 19:01:36 / 修改时间：21:05:44" itemprop="dateCreated datePublished" datetime="2022-05-08T19:01:36+08:00">2022-05-08</time>
+      <time title="创建时间：2022-05-08 19:01:36 / 修改时间：21:07:40" itemprop="dateCreated datePublished" datetime="2022-05-08T19:01:36+08:00">2022-05-08</time>
     </span>
 
   
@@ -199,40 +199,20 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <span id="more"></span>
-
-<ol>
+          <ol>
 <li><p>在<code>/home/xxt/makefile-226</code>目录下创建<code>automake</code>目录，在此c目录下创建六个源代码文件，分别是input.c、compute.c、test.c、input.h、compute.h和main.h，其依赖关系如图11所示。<br><img src="https://tva3.sinaimg.cn/large/006JqGD4gy1h217t3fgcxj307z04b3z5.jpg" alt="1"></p>
 </li>
 <li><p>在<code>automake</code>目录下执行<code>autoscan</code>命令扫描工作目录,生成<code>configure.scan</code>；<br><img src="https://tvax3.sinaimg.cn/large/006JqGD4gy1h217zp5ccqj30gn021jsb.jpg" alt="1"></p>
 </li>
-<li><p>将<code>configure.scan</code>重命名为<code>configure.ac</code>，并修改该文件的配置信息；<br><img src="https://tva2.sinaimg.cn/large/006JqGD4gy1h217zpaa7hj30fy01rmxz.jpg" alt="2"></p>
-</li>
-<li><p>在<code>automake</code>目录下执行<code>aclocal</code>命令，扫描<code>configure.ac</code>文件,生成<code>aclocal.m4</code>文件；<br><img src="https://tva2.sinaimg.cn/large/006JqGD4gy1h217zpf0uhj30c0030gmv.jpg" alt="3"></p>
-</li>
-<li><p>在<code>automake</code>目录下执行<code>autoconf</code>命令，引用<code>aclocal.m4</code>文件的宏，将<code>configure.ac</code>文件中的宏展开，生成<code>configure</code>脚本文件；<br><img src="https://tvax3.sinaimg.cn/large/006JqGD4gy1h217zpjrw2j30ep09q41s.jpg" alt="4"><br><img src="https://tva2.sinaimg.cn/large/006JqGD4gy1h217zpn91wj30cl02f3zk.jpg" alt="5"></p>
-</li>
-<li><p>在<code>automake</code>目录下执行<code>autoheader</code>命令，生成<code>config.h.in</code>文件；<br><img src="https://tvax1.sinaimg.cn/large/006JqGD4gy1h217zqfeqjj30ef02rq49.jpg" alt="6"></p>
-</li>
-<li><p>在<code>automake</code>目录下创建<code>Makefile.am</code>文件，供<code>automake</code>工具根据<code>configure.in</code>中的参数将<code>Makefile.am</code>转换成<code>Makefile.in</code>文件。</p>
-</li>
-<li><p>在<code>automake</code>目录下执行<code>automake --add-missing</code>命令生成<code>Makefile.in</code>文件，若有缺失文件，会提示；<br><img src="https://tvax3.sinaimg.cn/large/006JqGD4gy1h217zqkha2j30fb08e0y6.jpg" alt="7"></p>
-</li>
-<li><p>在<code>automake</code>目录下添加缺失文件：<code>touch NEWS README AUTHORS ChangeLog</code></p>
-</li>
-<li><p>在automake目录下执行automake,即可生成配置文件configure；<br><img src="https://tvax4.sinaimg.cn/large/006JqGD4gy1h217zqryd5j30ia040wh7.jpg" alt="8"></p>
-</li>
-<li><p>在<code>automake</code>目录下执行执行配置文件：<code>./configure</code>，即可基于<code>Makefile.in</code>生成<code>Makefile</code>文件；<br><img src="https://tva3.sinaimg.cn/large/006JqGD4gy1h217zqx295j30gj0gtwmz.jpg" alt="9"></p>
-</li>
-<li><p>在<code>automake</code>目录下执行：<code>make</code>,即可生成可执行文件test。运行<code>./test</code>观察结果；执行命令：<code>make install</code>，安装该软件；执行命令：<code>make uninstall</code>，卸载该软件；执行命令：<code>make clean</code>。观察结果。<br><img src="https://tva2.sinaimg.cn/large/006JqGD4gy1h217zrygl5j30j80c97a8.jpg" alt="11"></p>
-</li>
 </ol>
-<ul>
-<li><code>make install</code><br><img src="https://tva2.sinaimg.cn/large/006JqGD4gy1h217zshtxtj309d03lwfj.jpg" alt="15"></li>
-<li><code>make install</code><br><img src="https://tvax4.sinaimg.cn/large/006JqGD4gy1h217zsep4hj309r0273z9.jpg" alt="14"></li>
-<li><code>make clean</code><br><img src="https://tva3.sinaimg.cn/large/006JqGD4gy1h217zs9rfvj30gn04j40p.jpg" alt="13"></li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/05/08/%E3%80%90Linux%E5%AD%A6%E4%B9%A0%E3%80%9110%E3%80%81%E4%BD%BF%E7%94%A8Autotools%E8%87%AA%E5%8A%A8%E4%BA%A7%E7%94%9FMakefile/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
