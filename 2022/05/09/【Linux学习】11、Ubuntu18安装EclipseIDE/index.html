@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="安装JDK1.下载JDK 链接：https:&#x2F;&#x2F;www.oracle.com&#x2F;java&#x2F;technologies&#x2F;downloads&#x2F;选择的jdk文件一般是linnux中的x64 Compressed Archive版本2. 在&#x2F;usr&#x2F;lib目录下建立目录jvm3. 将JDK安装包解压到&#x2F;usr&#x2F;lib&#x2F;jvm目录在终端输入： 1sudo tar">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Linux学习】11、Ubuntu18安装EclipseIDE">
+<meta property="og:url" content="http://example.com/2022/05/09/%E3%80%90Linux%E5%AD%A6%E4%B9%A0%E3%80%9111%E3%80%81Ubuntu18%E5%AE%89%E8%A3%85EclipseIDE/index.html">
+<meta property="og:site_name" content="XieTaotao的博客">
+<meta property="og:description" content="安装JDK1.下载JDK 链接：https:&#x2F;&#x2F;www.oracle.com&#x2F;java&#x2F;technologies&#x2F;downloads&#x2F;选择的jdk文件一般是linnux中的x64 Compressed Archive版本2. 在&#x2F;usr&#x2F;lib目录下建立目录jvm3. 将JDK安装包解压到&#x2F;usr&#x2F;lib&#x2F;jvm目录在终端输入： 1sudo tar">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/006JqGD4gy1h21go30b5pj30j80elaf7.jpg">
+<meta property="og:image" content="https://tvax4.sinaimg.cn/large/006JqGD4gy1h21go35rd0j30dp033jsh.jpg">
+<meta property="og:image" content="https://tvax2.sinaimg.cn/large/006JqGD4gy1h21go2pp9jj30e901uq3p.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/006JqGD4gy1h21go2ujpij30qk0pjgxi.jpg">
+<meta property="article:published_time" content="2022-05-08T16:26:41.000Z">
+<meta property="article:modified_time" content="2022-05-08T16:37:03.845Z">
+<meta property="article:author" content="Xie Taotao">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva3.sinaimg.cn/large/006JqGD4gy1h21go30b5pj30j80elaf7.jpg">
+
+
+<link rel="canonical" href="http://example.com/2022/05/09/%E3%80%90Linux%E5%AD%A6%E4%B9%A0%E3%80%9111%E3%80%81Ubuntu18%E5%AE%89%E8%A3%85EclipseIDE/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/05/09/%E3%80%90Linux%E5%AD%A6%E4%B9%A0%E3%80%9111%E3%80%81Ubuntu18%E5%AE%89%E8%A3%85EclipseIDE/","path":"2022/05/09/【Linux学习】11、Ubuntu18安装EclipseIDE/","title":"【Linux学习】11、Ubuntu18安装EclipseIDE"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【Linux学习】11、Ubuntu18安装EclipseIDE | XieTaotao的博客</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">XieTaotao的博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">记得按时敲代码</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85JDK"><span class="nav-number">1.</span> <span class="nav-text">安装JDK</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Eclipse"><span class="nav-number">2.</span> <span class="nav-text">安装Eclipse</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Xie Taotao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/09/%E3%80%90Linux%E5%AD%A6%E4%B9%A0%E3%80%9111%E3%80%81Ubuntu18%E5%AE%89%E8%A3%85EclipseIDE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xie Taotao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieTaotao的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【Linux学习】11、Ubuntu18安装EclipseIDE | XieTaotao的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【Linux学习】11、Ubuntu18安装EclipseIDE
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-05-09 00:26:41 / 修改时间：00:37:03" itemprop="dateCreated datePublished" datetime="2022-05-09T00:26:41+08:00">2022-05-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h1><p>1.下载JDK</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/downloads/">https://www.oracle.com/java/technologies/downloads/</a><br>选择的jdk文件一般是linnux中的x64 Compressed Archive版本<br>2. 在&#x2F;usr&#x2F;lib目录下建立目录jvm<br>3. 将JDK安装包解压到&#x2F;usr&#x2F;lib&#x2F;jvm目录<br>在终端输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -xzvf /home/xxt/下载/jdk-17_linux-x64_bin.tar.gz  -C  /usr/lib/jvm</span><br></pre></td></tr></table></figure>
+<p>其中<code>/home/xxt/下载/</code>是<code>jdk-17_linux-x64_bin.tar.gz</code>所在的路径；<code>-C</code>不要少，否则命令可能下发失败；<code>/usr/lib/jvm</code>是<code>jdk-17_linux-x64_bin.tar.gz </code>的解压路径。</p>
+<span id="more"></span>
+
+
+<ol start="4">
+<li>添加环境变量</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/profile</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li><p>在profile文件的结尾加上几个目录的路径。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/lib/jvm/jdk-17.0.3</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> HRE_HOME=<span class="variable">$JAVA_HOME</span>/jre</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/lib:<span class="variable">$JRE_HOME</span>/lib:<span class="variable">$CLASSPATH</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$JRE_HOME</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://tva3.sinaimg.cn/large/006JqGD4gy1h21go30b5pj30j80elaf7.jpg" alt="1"><br>保存退出。</p>
+</li>
+<li><p>在终端输入:<code>source /etc/profile</code>让环境生效。</p>
+</li>
+<li><p>在终端输入：<code>echo $JAVA_HOME</code>判断JDK是否生效</p>
+</li>
+<li><p>在终端输入： <code>java –version</code>查看java是否安装成功。<br><img src="https://tvax4.sinaimg.cn/large/006JqGD4gy1h21go35rd0j30dp033jsh.jpg" alt="2"></p>
+</li>
+</ol>
+<h1 id="安装Eclipse"><a href="#安装Eclipse" class="headerlink" title="安装Eclipse"></a>安装Eclipse</h1><ol>
+<li>从官网下载eclipse</li>
+</ol>
+<p>链接：<a target="_blank" rel="noopener" href="https://www.eclipse.org/downloads/packages/">https://www.eclipse.org/downloads/packages/</a></p>
+<p>版本选择：Eclipse IDE for C&#x2F;C++ Developers，Linux x86_64下载不要直接点download，先选择换一个镜像（&gt;&gt; Select Another Mirror），选择中国内陆的任意一个地址去下载会快一些。</p>
+<p>下载<code>Eclipse-cpp-2021-12-R-linux-gtk-x86_64.tar.gz</code></p>
+<ol start="2">
+<li>创建安装目录：</li>
+</ol>
+<p>由于压缩包Eclipse-cpp-2021-12-R-linux-gtk-x86_64.tar.gz加压后就有根目录eclipse，因此无需创建eclipse。</p>
+<p>将Eclipse-cpp-2021-12-R-linux-gtk-x86_64.tar.gz压缩包，解压到&#x2F;opt&#x2F;：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tar –xzvf /home/xxt/下载/eclipse-cpp-2021-12-R-linux-gtk-x86_64.tar.gz  –C /opt/</span><br></pre></td></tr></table></figure>
+<p><code>/home/zs-112/</code>下载&#x2F; 是安装包所在的路径。</p>
+<ol start="3">
+<li>在<code>/opt/</code>目录下创建jre软连接，连接<code>/usr/lib/jvm/ jdk-17.0.2/bin</code>。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo  <span class="built_in">mkdir</span>  /opt/eclipse/jre</span><br><span class="line"></span><br><span class="line">sudo  <span class="built_in">ln</span>  –s  /usr/lib/jvm/ jdk-17.0.2/bin  /opt/eclipse/jre/</span><br></pre></td></tr></table></figure>
+<img src="https://tvax2.sinaimg.cn/large/006JqGD4gy1h21go2pp9jj30e901uq3p.jpg" alt="3"></li>
+</ol>
+<p>由于Eclipse是运行在jre环境下，需要将jdk的命令目录&#x2F;bin创建链接到在eclipse&#x2F;jre&#x2F;目录下。</p>
+<ol start="4">
+<li>添加桌面快捷方式</li>
+</ol>
+<p>进入<code>/usr/share/applications/</code>目录，查看有没有<code>eclipse.desktop</code>文件，若没有则可以在当前目录下，随便找一个<code>xxx.desktop</code>修改：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> xxx.desktop eclipse.desktop</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>打开eclipse.desktop文件，修改相关参数；<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /usr/share/applications/eclipse.desktop</span><br></pre></td></tr></table></figure>
+ 输入如下内容：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line"></span><br><span class="line">Encoding=UTF-8</span><br><span class="line"></span><br><span class="line">Name=Eclispse</span><br><span class="line"></span><br><span class="line">Comment=Eclipse</span><br><span class="line"></span><br><span class="line">Exec=/opt/eclipse/eclipse</span><br><span class="line"></span><br><span class="line">Icon=/opt/eclipse/icon.xpm</span><br><span class="line"></span><br><span class="line">Terminal=<span class="literal">false</span></span><br><span class="line"></span><br><span class="line">X-MultipleArgs=<span class="literal">false</span></span><br><span class="line"></span><br><span class="line">Type=Application</span><br><span class="line"></span><br><span class="line">Categories=Application;Development;</span><br></pre></td></tr></table></figure>
+注意：Exec和Icon分别是eclipse运行程序和图标的路径，不能写错。</li>
+</ol>
+<p>保存退出，并赋予可执行权限：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">chmod</span> u+x /usr/share/applications/eclipse.desktop</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>在软件中心找到Eclipse图标打开，创建工程helloworld，测试是否正常。<br><img src="https://tva2.sinaimg.cn/large/006JqGD4gy1h21go2ujpij30qk0pjgxi.jpg" alt="4"></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/08/%E3%80%90Linux%E5%AD%A6%E4%B9%A0%E3%80%9110%E3%80%81%E4%BD%BF%E7%94%A8Autotools%E8%87%AA%E5%8A%A8%E4%BA%A7%E7%94%9FMakefile/" rel="prev" title="【Linux学习】10、使用Autotools自动产生Makefile">
+                  <i class="fa fa-chevron-left"></i> 【Linux学习】10、使用Autotools自动产生Makefile
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xie Taotao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
